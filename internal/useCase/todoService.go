@@ -61,7 +61,7 @@ func (s *TodoService) GetTodoById(id int) (model.Todo, error){
 
 // delete Todos
 
-func (s *TodoService) DeleteTodos(id int) error {
+func (s *TodoService) DeleteTodo(id int) error {
 	for i, todo := range s.todos{
 		if todo.ID == id{
 			s.todos = append(s.todos[:i], s.todos[i+1:]...)

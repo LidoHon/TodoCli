@@ -59,7 +59,7 @@ func RunCli(todoService *usecase.TodoService){
 				fmt.Print(Blue + "enter todo id to delete: " + Reset)
 				scanner.Scan()
 				id,_ := strconv.Atoi(scanner.Text())
-				if err := todoService.DeleteTodos(id); err != nil{
+				if err := todoService.DeleteTodo(id); err != nil{
 					fmt.Println(err)
 				}
 				fmt.Println(Green + "todo deleted successfully" + Reset)

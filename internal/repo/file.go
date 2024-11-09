@@ -12,7 +12,7 @@ type FileStorage struct{
 	fileName string
 }
 
-// so basically what the bellow constructor function would do is create a new fileStorage object and return it
+// so basically what constructor function would do is create a new fileStorage object and return it
 func NewFile(fileName string) *FileStorage{
 	return &FileStorage{fileName: fileName}
 }
