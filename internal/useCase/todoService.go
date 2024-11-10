@@ -36,7 +36,7 @@ func (s *TodoService) CreateTodo(title string)error {
 func (s *TodoService) UpdateTodo(id int) error {
 	for i, todo := range s.todos{
 		if todo.ID == id{
-			s.todos[i].Completed = true
+			s.todos[i].Completed = !s.todos[i].Completed
 			return s.fileStorage.SaveTodos(s.todos)
 		}
 	}
