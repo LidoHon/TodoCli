@@ -51,7 +51,7 @@ func RunCli(todoService *usecase.TodoService){
 				
 
 			case "update":
-				fmt.Print(Blue +"enter todo id to update | to mark as completed: " + Reset)
+				fmt.Print(Blue +"enter todo id to update: " + Reset)
 				scanner.Scan()
 				id,_ := strconv.Atoi(scanner.Text())
 				if err := todoService.UpdateTodo(id); err != nil{
@@ -83,7 +83,7 @@ func RunCli(todoService *usecase.TodoService){
 					fmt.Println(Bold+"Here are ur todos: "+Reset)
 
 					for _, todo := range todos{
-						status := "not completed"
+						status := "notCompleted"
 						if todo.Completed{
 							status = "completed"
 						}
@@ -101,7 +101,11 @@ func RunCli(todoService *usecase.TodoService){
 				if err != nil{
 					fmt.Println(Red+"No todo found with the given ID.Please try again."+Reset)
 				}else{
-					fmt.Printf(Cyan+"ID: %d, Title: %s, Completed: %t"+Reset+"\n", todo.ID, todo.Title, todo.Completed)
+					status := "notCompleted"
+						if todo.Completed {
+							status = "completed"
+						}
+						fmt.Printf(Cyan + "ID: %d, Title: %s, Status: %s" + Reset + "\n", todo.ID, todo.Title, status)
 				}
 					
 

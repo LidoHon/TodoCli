@@ -32,7 +32,7 @@ func (s *TodoService) CreateTodo(title string)error {
 }
 
 
-// update to-do ( complete to-do)
+// update to-do status
 func (s *TodoService) UpdateTodo(id int) error {
 	for i, todo := range s.todos{
 		if todo.ID == id{

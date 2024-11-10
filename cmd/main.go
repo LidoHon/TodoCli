@@ -11,7 +11,6 @@ import (
 
 func main(){
 	// load to-dos from file
-
 	fileStorage := repo.NewFile("todos.txt")
 	todos, err := fileStorage.LoadTodos()
 	if err != nil{
